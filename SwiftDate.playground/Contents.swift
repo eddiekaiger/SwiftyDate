@@ -2,13 +2,11 @@
 import Foundation
 import UIKit
 
-public class SwiftDate {
+public struct SwiftDate {
     
-    private let value: NSTimeInterval
     private let seconds: NSTimeInterval
     
-    public init(value: NSTimeInterval, seconds: NSTimeInterval) {
-        self.value = value
+    public init(seconds: NSTimeInterval) {
         self.seconds = seconds
     }
     
@@ -37,7 +35,7 @@ private let secondsInWeek: NSTimeInterval = 604800
 extension NSTimeInterval {
     
     private func swiftDate(secondsInUnit: NSTimeInterval) -> SwiftDate {
-        return SwiftDate(value: self, seconds: self * secondsInUnit)
+        return SwiftDate(seconds: self * secondsInUnit)
     }
     
     public var seconds: SwiftDate { return swiftDate(self) }
