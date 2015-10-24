@@ -29,48 +29,48 @@ THE SOFTWARE.
 import Foundation
 
 /**
-This class is used as the middleman for easily constructing a relative date
-based on extensions from Swift number types. It is not intended to be used
-independently. Instead, use SwiftyDate's extensions to construct statements
-such as `12.days.ago()`.
+    This class is used as the middleman for easily constructing a relative date
+    based on extensions from Swift number types. It is not intended to be used
+    independently. Instead, use SwiftyDate's extensions to construct statements
+    such as `12.days.ago()`.
 */
 public struct SwiftyDate {
     
     private let seconds: NSTimeInterval
     
     /**
-    Initializes a new SwiftyDate object.
-    :param:  seconds  The total number of seconds to be used as a relative timestamp.
+        Initializes a new SwiftyDate object.
+        :param:  seconds  The total number of seconds to be used as a relative timestamp.
     */
     public init(seconds: NSTimeInterval) {
         self.seconds = seconds
     }
     
     /**
-    Returns an `NSDate` that represents the specified amount of time ahead of the current date.
+        Returns an `NSDate` that represents the specified amount of time ahead of the current date.
     */
     public func fromNow() -> NSDate {
         return NSDate(timeIntervalSinceNow: seconds)
     }
     
     /**
-    Returns an `NSDate` that represents the specified amount of time before the current date.
+        Returns an `NSDate` that represents the specified amount of time before the current date.
     */
     public func ago() -> NSDate {
         return before(NSDate())
     }
     
     /**
-    Returns an `NSDate` that represents the specified amount of time after a certain date.
-    :param:  date  The date of comparison.
+        Returns an `NSDate` that represents the specified amount of time after a certain date.
+        :param:  date  The date of comparison.
     */
     public func after(date: NSDate) -> NSDate {
         return NSDate(timeInterval: seconds, sinceDate: date)
     }
     
     /**
-    Returns an `NSDate` that represents the specified amount of time before a certain date.
-    :param:  date  The date of comparison.
+        Returns an `NSDate` that represents the specified amount of time before a certain date.
+        :param:  date  The date of comparison.
     */
     public func before(date: NSDate) -> NSDate {
         return NSDate(timeInterval: -seconds, sinceDate: date)
