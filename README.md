@@ -11,10 +11,13 @@ let beforeDate = 5.minutes.before(anotherDate)a
 let afterDate = 15.hours.after(anotherDate)
 ````
 
-
-
 ### Installation
 
 CocoaPods
 
 ````pod 'SwiftyDate', '~>1.0'````
+
+___
+
+_Original idea by [Joe Ferrucci](http://github.com/JoeFerrucci)._
+
