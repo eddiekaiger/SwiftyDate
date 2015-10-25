@@ -33,7 +33,12 @@ Functions to generate dates:
 
 CocoaPods
 
-````pod 'SwiftyDate', '~>1.0'````
+````pod 'SwiftyDate'````
+
+### Usage
+
+````import SwiftyDate````
+
 
 ___
 
