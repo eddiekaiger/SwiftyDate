@@ -26,7 +26,7 @@ THE SOFTWARE.
 */
 
 
-import Foundation
+import UIKit
 
 /**
     This class is used as the middleman for easily constructing a relative date
@@ -90,7 +90,7 @@ extension NSTimeInterval {
         return SwiftyDate(seconds: self * secondsInUnit)
     }
     
-    public var seconds: SwiftyDate { return swiftDate(self) }
+    public var seconds: SwiftyDate { return swiftDate(1) }
     public var minutes: SwiftyDate { return swiftDate(secondsInMinute) }
     public var hours: SwiftyDate { return swiftDate(secondsInHour) }
     public var days: SwiftyDate { return swiftDate(secondsInDay) }
