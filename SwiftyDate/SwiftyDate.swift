@@ -150,3 +150,7 @@ extension NSNumber: TimeNumber {
 extension TimeInterval: TimeNumber {
     public var timeValue: TimeInterval { return self }
 }
+
+extension CGFloat: TimeNumber {
+    public var timeValue: TimeInterval { return TimeInterval(self) }
+}
